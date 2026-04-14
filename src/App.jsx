@@ -1,9 +1,10 @@
 import "./App.css";
+import NavBar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
     <>
-      <h2>This is the AI Model HUB BY React</h2>
+     <NavBar></NavBar>
     </>
   );
 }
