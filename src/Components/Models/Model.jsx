@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 
-const Model = ({ model }) => {
+const Model = ({ model, carts, setCarts }) => {
   // console.log(model);
   const [isSubscribed, setIsSubscribed] = useState(false);
   const { title, description, price, image } = model;
+
+  const handleSubscription = () => {
+    setIsSubscribed(true);
+    setCarts([...carts, model]);
+  };
   return (
     <div className="rounded-4xl border border-zinc-200 p-5 shadow-lg space-y-4 transition hover:-translate-y-0.5 overflow-hidden">
       <div className="flex justify-center bg-zinc-100 rounded-4xl  py-5">
@@ -20,7 +25,7 @@ const Model = ({ model }) => {
         ${price} <span className="text-xl ">/month</span>
       </h4>
       <button
-        onClick={() => setIsSubscribed(true)}
+        onClick={handleSubscription}
         className="btn bg-red-700 text-white w-full rounded-full font-bold text-xl"
       >
         {isSubscribed ? "Subscribed" : "Subscribe Now"}
