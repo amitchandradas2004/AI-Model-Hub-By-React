@@ -2,10 +2,10 @@ import BannerImage from "../../assets/banner.png";
 
 const Banner = () => {
   return (
-    <div className="relative mt-5 flex items-center overflow-hidden container mx-auto px-2 md:px-0">
+    <div className="relative mt-5 flex  justify-between items-center overflow-hidden container mx-auto px-2 md:px-0  ">
       <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
         {/* Left Content */}
-        <div className="space-y-4">
+        <div className="space-y-4  ">
           <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/30 text-red-400 text-sm font-medium px-5 py-2 rounded-full">
             ✨ Frontier AI Models
           </div>
@@ -38,7 +38,7 @@ const Banner = () => {
         </div>
 
         {/* Right Image */}
-        <div className="relative flex justify-center lg:justify-end">
+        <div className="relative flex justify-center lg:justify-end  ">
           <div className="relative">
             <img
               className="relative h-130 w-auto object-contain drop-shadow-2xl rounded-3xl animate-pulse"

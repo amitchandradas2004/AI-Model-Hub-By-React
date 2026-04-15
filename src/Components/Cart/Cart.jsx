@@ -1,8 +1,10 @@
 import React from "react";
 import { RxCross1 } from "react-icons/rx";
 
-const Cart = ({ carts, setCarts }) => {
+const Cart = ({ carts }) => {
   // console.log(carts);
+  const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
+  console.log(totalPrice);
 
   return (
     <div className="pt-10 container mx-auto">
@@ -10,7 +12,7 @@ const Cart = ({ carts, setCarts }) => {
       {carts.map((item) => (
         <div
           key={item.id}
-          className="flex justify-between items-center shadow-md   py-5 px-2 rounded-2xl bg-gray-200 my-5"
+          className="flex justify-between items-center shadow-md   py-5 px-2 rounded-2xl bg-gray-200 my-5 transition hover:-translate-y-0.5"
         >
           <div className="flex justify-between items-center gap-3">
             <img src={item.image} alt={item.title} className="w-20" />
@@ -28,9 +30,9 @@ const Cart = ({ carts, setCarts }) => {
           </span>
         </div>
       ))}
-      <div className="flex justify-between items-center bg-black text-white text-2xl font-bold rounded-full px-10 py-5 my-5">
+      <div className="flex justify-between items-center bg-black text-white text-2xl font-bold rounded-full px-10 py-5 my-5 transition hover:-translate-y-0.5">
         <span>Total</span>
-        <span>{carts.length}</span>
+        <span>${totalPrice}</span>
       </div>
     </div>
   );
